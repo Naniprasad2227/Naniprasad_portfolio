@@ -8,14 +8,22 @@ import { useState } from "react";
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("sending");
-    // Simulate sending
-    setTimeout(() => {
-      setStatus("sent");
-      setTimeout(() => setStatus("idle"), 5000);
-    }, 1500);
+    
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name")?.toString() || "";
+    const subject = formData.get("subject")?.toString() || "Portfolio Contact";
+    const message = formData.get("message")?.toString() || "";
+    
+    // Format the email body
+    const body = `Hi Naniprasad,\n\n${message}\n\nFrom: ${name}`;
+    
+    // Open the user's default email client with the pre-filled data
+    window.location.href = `mailto:naniprasadcharla@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    setStatus("sent");
+    setTimeout(() => setStatus("idle"), 3000);
   };
 
   return (
@@ -111,22 +119,22 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="name" className="font-mono text-xs text-[#00E5FF] tracking-wider uppercase">Name</label>
-                  <input suppressHydrationWarning type="text" id="name" required placeholder="Your name" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all font-sans" />
+                  <input suppressHydrationWarning type="text" id="name" name="name" required placeholder="Your name" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all font-sans" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="email" className="font-mono text-xs text-[#00E5FF] tracking-wider uppercase">Email</label>
-                  <input suppressHydrationWarning type="email" id="email" required placeholder="your@email.com" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all font-sans" />
+                  <input suppressHydrationWarning type="email" id="email" name="email" required placeholder="your@email.com" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all font-sans" />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="subject" className="font-mono text-xs text-[#00E5FF] tracking-wider uppercase">Subject</label>
-                <input suppressHydrationWarning type="text" id="subject" required placeholder="Internship / Collaboration" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all font-sans" />
+                <input suppressHydrationWarning type="text" id="subject" name="subject" required placeholder="Internship / Collaboration" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all font-sans" />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="message" className="font-mono text-xs text-[#00E5FF] tracking-wider uppercase">Message</label>
-                <textarea suppressHydrationWarning id="message" required rows={4} placeholder="Tell me about the opportunity..." className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all font-sans resize-y" />
+                <textarea suppressHydrationWarning id="message" name="message" required rows={4} placeholder="Tell me about the opportunity..." className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all font-sans resize-y" />
               </div>
 
               <button
