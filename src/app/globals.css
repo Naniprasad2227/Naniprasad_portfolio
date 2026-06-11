@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050816;
+  --color-surface: #0F172A;
+  --color-accent: #00E5FF;
+  --color-secondary: #38BDF8;
+  --color-muted: #94A3B8;
+  --color-success: #22C55E;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-space-grotesk);
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+:root {
+  --background: #050816;
+  --foreground: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
