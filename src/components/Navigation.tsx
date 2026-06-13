@@ -98,7 +98,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="https://drive.google.com/file/d/1bPYqv4N-gKIrNVZUQav6FQm82Ohrvy5t/view?usp=sharing"
+            href="https://drive.google.com/file/d/1waNmA3_tZh3vM1yTFxQzzU8mzXHrHdG0/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-[#00E5FF] text-[#050816] px-5 py-3 rounded-lg font-mono font-bold mt-4"
