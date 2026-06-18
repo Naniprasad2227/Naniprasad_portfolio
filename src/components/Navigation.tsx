@@ -60,7 +60,7 @@ export default function Navigation() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <a
-            href="https://drive.google.com/file/d/1V2-UHqtDK8DJm3LB44W9BR2nb7pUvZ6l/view?usp=sharing"
+            href="https://docs.google.com/document/d/1VT64CtX0H793LKb3EDrglH0y2E4yIAzs/edit?usp=sharing&ouid=111959603498772348118&rtpof=true&sd=true"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#00E5FF] hover:bg-[#38BDF8] text-[#050816] px-5 py-2.5 rounded-lg font-mono font-bold text-sm transition-all shadow-[0_0_15px_rgba(0,229,255,0.3)] hover:shadow-[0_0_25px_rgba(0,229,255,0.6)] hover:-translate-y-0.5"
@@ -98,7 +98,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="https://drive.google.com/file/d/1V2-UHqtDK8DJm3LB44W9BR2nb7pUvZ6l/view?usp=sharing"
+            href="https://docs.google.com/document/d/1VT64CtX0H793LKb3EDrglH0y2E4yIAzs/edit?usp=sharing&ouid=111959603498772348118&rtpof=true&sd=true"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-[#00E5FF] text-[#050816] px-5 py-3 rounded-lg font-mono font-bold mt-4"

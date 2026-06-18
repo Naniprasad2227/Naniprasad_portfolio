@@ -122,7 +122,7 @@ export default function Hero() {
               View Projects <ArrowRight size={18} />
             </a>
             <a
-              href="https://drive.google.com/file/d/1V2-UHqtDK8DJm3LB44W9BR2nb7pUvZ6l/view?usp=sharing"
+              href="https://docs.google.com/document/d/1VT64CtX0H793LKb3EDrglH0y2E4yIAzs/edit?usp=sharing&ouid=111959603498772348118&rtpof=true&sd=true"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-transparent border border-[#00E5FF]/40 text-[#00E5FF] hover:bg-[#00E5FF]/10 px-6 py-3 rounded-xl font-mono font-bold transition-all hover:-translate-y-1"
